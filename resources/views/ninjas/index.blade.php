@@ -6,8 +6,8 @@
     @endif
   </div>
 
-  <div class="self-center text-left">
-    <p>Get the ninja what you need.</p>
+  <div class="self-center text-left overflow-scroll my-10 border-2 border-dashed">
+    <p class="mb-2 text-center">Get the ninja what you need.</p>
     <ul>
       @foreach($ninjas as $ninja)
       <div class="flex items-center gap-2">

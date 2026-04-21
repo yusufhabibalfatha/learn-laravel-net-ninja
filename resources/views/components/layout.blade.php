@@ -10,7 +10,7 @@
   @vite('resources/css/app.css')
 </head>
 
-<body class="text-center flex flex-col justify-between border w-fit m-auto px-8 py-4 h-100 mt-10">
+<body class="text-center flex flex-col justify-between border w-fit m-auto px-8 py-4 h-100 mt-10 overflow-hidden">
   {{ $slot }}
 </body>
 

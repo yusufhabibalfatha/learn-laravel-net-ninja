@@ -18,14 +18,15 @@ class NinjaController extends Controller
 
     public function show($id)
     {
-        // route /ninjas/id
-        // fetch a single record and pass into show view
+        // route /ninjas/id\
+        $ninja = Ninja::findOr($id);
+        return view('ninjas.show', ['ninja' => $ninja]);
     }
 
     public function create()
     {
         // route /ninjas/create
-        // render a create view (with web form) to users
+        return view('ninjas.create', ['token' => true]);
     }
 
     public function store()

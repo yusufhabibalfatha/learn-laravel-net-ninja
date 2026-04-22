@@ -11,7 +11,7 @@ class NinjaController extends Controller
     {
         // route /
         // fetch all record and pass into index view
-        $ninjas = Ninja::orderBy('created_at', 'desc')->paginate(10);
+        $ninjas = Ninja::orderBy('created_at', 'desc')->paginate(5);
 
         return view('ninjas.index', ['ninjas' => $ninjas, 'token' => true]);
     }

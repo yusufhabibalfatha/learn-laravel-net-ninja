@@ -8,10 +8,11 @@
 
   <div class="self-center text-left ">
     <p class="mb-2 text-center">Get the ninja what you need.</p>
-    <ul>
+    <ul class="flex flex-col gap-2">
       @foreach($ninjas as $ninja)
-      <div class="flex items-center gap-2">
+      <div class="flex flex-col border-2 p-2 gap-2">
         <li>🥷 {{ $ninja->name}}</li>
+        <p>Dojo name : {{ $ninja->dojo->name }}</p>
         <a class="underline italic text-xs" href="{{ route('ninjas.show', $ninja->id) }}">View Details</a>
       </div>
       @endforeach

@@ -1,4 +1,9 @@
 <x-layout>
+  @if(session('success'))
+  <div id="flash" class="text-green-600">
+    {{ session('success') }}
+  </div>
+  @endif
   <div>
     <h2 class="text-xl font-bold">Welcome to Ninjas Page</h2>
     @if($token)

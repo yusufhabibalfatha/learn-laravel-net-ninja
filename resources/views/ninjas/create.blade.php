@@ -11,6 +11,7 @@
       type="text"
       id="name"
       name="name"
+      value="{{ old('name')}}"
       required>
 
     <!-- ninja Strength -->
@@ -19,6 +20,7 @@
       type="number"
       id="skill"
       name="skill"
+      value="{{ old('skill')}}"
       required>
 
     <!-- ninja Bio -->
@@ -27,14 +29,14 @@
       rows="5"
       id="bio"
       name="bio"
-      required></textarea>
+      required>{{ old('bio') }}</textarea>
 
     <!-- select a dojo -->
     <label for="dojo_id">Dojo:</label>
     <select id="dojo_id" name="dojo_id" required>
       <option value="" disabled selected>Select a dojo</option>
       @foreach ($dojos as $dojo)
-      <option value="{{ $dojo->id }}">
+      <option value="{{ $dojo->id }}" {{ $dojo->id == old('dojo_id') ? 'selected' : '' }}>
         {{ $dojo->name }}
       </option>
       @endforeach
@@ -46,10 +48,16 @@
 
   </form>
 
+  @if($errors->any())
+  <ul>
+    @foreach($errors->all() as $error)
+    <li class="text-red-600">{{ $error }}</li>
+    @endforeach
+  </ul>
+  @endif
+
   <div>
     <a href="{{ route('welcome') }}" class="border-2 px-4 py-2 w-fit self-center rounded-md mt-2 font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">🏠 HOMEPAGE</a>
 
-
-    {{ $errors->first() }}
   </div>
 </x-layout>
